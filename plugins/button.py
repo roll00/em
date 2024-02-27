@@ -77,7 +77,7 @@ def start_button(client):
 
 
 def fsub_button(client, message):
-    if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and not FORCE_SUB_GROUP2 and not FORCE_SUB_GROUP3 and not FORCE_SUB_GROUP4 and not FORCE_SUB_GROUP5:
+    if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and not FORCE_SUB_GROUP2 and not FORCE_SUB_GROUP3:
         buttons = [
             [
                 InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=client.invitelink2),
@@ -95,7 +95,7 @@ def fsub_button(client, message):
         except IndexError:
             pass
         return buttons
-    if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP and not FORCE_SUB_GROUP2 and not FORCE_SUB_GROUP3 and not FORCE_SUB_GROUP4 and not FORCE_SUB_GROUP5:
+    if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP and not FORCE_SUB_GROUP2 and not FORCE_SUB_GROUP3:
         buttons = [
             [
                 InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=client.invitelink),
@@ -113,7 +113,7 @@ def fsub_button(client, message):
         except IndexError:
             pass
         return buttons
-    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and not FORCE_SUB_GROUP2 and not FORCE_SUB_GROUP3 and not FORCE_SUB_GROUP4 and not FORCE_SUB_GROUP5:
+    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and not FORCE_SUB_GROUP2 and not FORCE_SUB_GROUP3:
         buttons = [
             [
                 InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=client.invitelink),
@@ -132,7 +132,7 @@ def fsub_button(client, message):
         except IndexError:
             pass
         return buttons
-    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and FORCE_SUB_GROUP2 and not FORCE_SUB_GROUP3 and not FORCE_SUB_GROUP4 and not FORCE_SUB_GROUP5:
+    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and FORCE_SUB_GROUP2 and not FORCE_SUB_GROUP3:
         buttons = [
             [
                 InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=client.invitelink),
@@ -154,7 +154,7 @@ def fsub_button(client, message):
         except IndexError:
             pass
         return buttons
-    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and FORCE_SUB_GROUP2 and FORCE_SUB_GROUP3 and not FORCE_SUB_GROUP4 and not FORCE_SUB_GROUP5:
+    if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP and FORCE_SUB_GROUP2 and FORCE_SUB_GROUP3:
         buttons = [
             [
                 InlineKeyboardButton(text="𝗝𝗼𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=client.invitelink),
