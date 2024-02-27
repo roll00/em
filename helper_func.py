@@ -11,7 +11,7 @@ from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 
-from config import ADMINS, FORCE_SUB_CHANNEL, FORCE_SUB_GROUP
+from config import ADMINS, FORCE_SUB_CHANNEL, FORCE_SUB_GROUP, FORCE_SUB_GROUP2, FORCE_SUB_GROUP3
 
 
 async def subschannel(filter, client, update):
@@ -43,17 +43,55 @@ async def subsgroup(filter, client, update):
 
     return member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]
 
+async def subsgroup2(filter, client, update):
+    if not FORCE_SUB_GROUP2:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_GROUP2, user_id=user_id)
+    except UserNotParticipant:
+        return False
+
+    return member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]
+
+async def subsgroup3(filter, client, update):
+    if not FORCE_SUB_GROUP3:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_GROUP3, user_id=user_id)
+    except UserNotParticipant:
+        return False
+
+    return member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]
+
 
 async def is_subscribed(filter, client, update):
     if not FORCE_SUB_CHANNEL:
         return True
     if not FORCE_SUB_GROUP:
         return True
+    if not FORCE_SUB_GROUP2:
+        return True
+    if not FORCE_SUB_GROUP3:
+        return True
     user_id = update.from_user.id
     if user_id in ADMINS:
         return True
     try:
         member = await client.get_chat_member(chat_id=FORCE_SUB_GROUP, user_id=user_id)
+    except UserNotParticipant:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_GROUP2, user_id=user_id)
+    except UserNotParticipant:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_GROUP3, user_id=user_id)
     except UserNotParticipant:
         return False
     try:
