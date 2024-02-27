@@ -14,7 +14,7 @@ from config import (
     FORCE_SUB_CHANNEL,
     FORCE_SUB_GROUP,
     FORCE_SUB_GROUP3,
-    FORCE_SUB_GROUP4,
+    FORCE_SUB_GROUP2,
     LOGGER,
     OWNER,
     TG_BOT_TOKEN,
